@@ -17,9 +17,12 @@ public class VolumeLevel : MonoBehaviour {
     void Start()
     {
         if (PlayerPrefs.HasKey("Volume"))
-            VolumeSlider.value = PlayerPrefs.GetFloat("Volume");
+            Volume = PlayerPrefs.GetFloat("Volume");
         else
+        {
             PlayerPrefs.SetFloat("Volume", 1.0f);
+            Volume = 1f;
+        }
     }
 
     /**
